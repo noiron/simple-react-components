@@ -3,32 +3,26 @@
  */
 import React from 'react';
 import classnames from 'classnames';
-import './index.css';
-// import { throttle } from '../../util';
+import styled from 'styled-components';
+import { throttle } from '../../utils';
 
+const ic_scroll_top = require('../../assets/images/scroll-top.png');
 
-export function throttle(fn, delay, atleast) {
-  var timer = null;
-  var previous = null;
+const ScrollTopBox = styled.div`
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  background-image: url(${ic_scroll_top});
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
 
-  return function() {
-      var now = +new Date();
-
-      if (!previous) previous = now;
-
-      if (now - previous > atleast) {
-          fn();
-          previous = now;
-      } else {
-          clearTimeout(timer);
-          timer = setTimeout(function() {
-              fn();
-          }, delay);
-      }
-  };
-};
-// const ic_scroll_top = require('../../image/scrollTop.png');
-
+  &.hide {
+    display: none;
+  }
+`;
 
 function withScroll(Comp) {
   return class ComponentWithScroll extends React.Component {
@@ -63,14 +57,13 @@ function withScroll(Comp) {
   }
 }
 
-
 class ScrollTop extends React.Component {
 
   scrollStep = () => {
     if (window.pageYOffset === 0) {
       clearInterval(this.intervalId);
     }
-    window.scroll(0, window.pageYOffset - 50);
+    window.scroll(0, window.pageYOffset - 100);
   }
 
   scrollToTop = () => {
@@ -81,12 +74,10 @@ class ScrollTop extends React.Component {
   render() {
     const { scrollY } = this.props;
     const shouldHide = scrollY < window.screen.height;
-    const classes = classnames('scroll-top-button', { 'hide': shouldHide });
+    const classes = classnames({ 'hide': shouldHide });
 
     return (
-      <div className={classes} onClick={this.scrollToTop}>
-        {/* <img src={ic_scroll_top} alt="返回顶部" /> */}
-      </div>
+      <ScrollTopBox className={classes} onClick={this.scrollToTop} />
     )
   }
 }
