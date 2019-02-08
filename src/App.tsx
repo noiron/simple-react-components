@@ -1,11 +1,6 @@
 import * as React from 'react';
 import ScrollTop from './components/scrollTop';
-import styled from 'styled-components';
 import './App.css';
-
-const Test = styled.div`
-  color: red;
-`;
 
 import logo from './logo.svg';
 
@@ -22,8 +17,6 @@ class App extends React.Component {
         </p>
 
         <ScrollTop />
-
-        <Test>6666666</Test>
       </div>
     );
   }
