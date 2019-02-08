@@ -24,9 +24,13 @@ const ScrollTopBox = styled.div`
   }
 `;
 
-function withScroll(Comp) {
-  return class ComponentWithScroll extends React.Component {
-    constructor(props) {
+interface IScrollTop {
+  scrollY: number;
+}
+
+function withScroll(Comp: any) {
+  return class ComponentWithScroll extends React.Component<any, IScrollTop> {
+    constructor(props: any) {
       super(props);
 
       this.state = {
@@ -44,7 +48,7 @@ function withScroll(Comp) {
     }
 
     componentWillUnmount() {
-      window.removeEventListener('scroll', this.scrollHandler);
+      window.removeEventListener('scroll', this._scrollHandler);
     }
 
     render() {
@@ -57,7 +61,8 @@ function withScroll(Comp) {
   }
 }
 
-class ScrollTop extends React.Component {
+class ScrollTop extends React.Component<IScrollTop> {
+  intervalId: number;
 
   scrollStep = () => {
     if (window.pageYOffset === 0) {
@@ -67,7 +72,7 @@ class ScrollTop extends React.Component {
   }
 
   scrollToTop = () => {
-    this.intervalId = setInterval(this.scrollStep, 20);
+    this.intervalId = window.setInterval(this.scrollStep, 20);
   }
 
 

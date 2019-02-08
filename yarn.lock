@@ -50,6 +50,10 @@
   version "0.7.3"
   resolved "http://192.168.60.82:4873/@emotion%2funitless/-/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
 
+"@types/classnames@^2.2.7":
+  version "2.2.7"
+  resolved "http://192.168.60.82:4873/@types%2fclassnames/-/classnames-2.2.7.tgz#fb68cc9be8487e6ea5b13700e759bfbab7e0fefd"
+
 "@types/jest@^23.3.13":
   version "23.3.13"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-23.3.13.tgz#c81484b6f4ca007bb09887ed15ecb3286d58f928"
