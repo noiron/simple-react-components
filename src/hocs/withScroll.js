@@ -1,15 +1,9 @@
 import React from 'react';
 import { throttle } from '../utils';
 
-export interface IWithScroll {
-  scrollY: number;
-}
-
-export default function withScroll<P extends Object>(
-  Comp: React.ComponentType<IWithScroll>
-) {
-  return class ComponentWithScroll extends React.Component<P, IWithScroll> {
-    constructor(props: P) {
+export default function withScroll(Comp) {
+  return class ComponentWithScroll extends React.Component {
+    constructor(props) {
       super(props);
 
       this.state = {

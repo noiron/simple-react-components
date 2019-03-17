@@ -5,7 +5,7 @@ import './App.css';
 import DemoScrollTop from './containers/demo-scroll-top';
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="App">
         <Router>

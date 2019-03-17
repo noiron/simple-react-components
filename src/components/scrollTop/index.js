@@ -4,7 +4,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
-import withScroll, { IWithScroll } from 'src/hocs/withScroll';
+import withScroll from '../../../src/hocs/withScroll';
 
 const ic_scroll_top = require('../../assets/images/scroll-top.png');
 
@@ -24,10 +24,7 @@ const ScrollTopBox = styled.div`
   }
 `;
 
-interface IScrollTop extends IWithScroll {}
-
-class ScrollTop extends React.Component<IScrollTop> {
-  intervalId: number;
+class ScrollTop extends React.Component {
 
   scrollStep = () => {
     if (window.pageYOffset === 0) {
