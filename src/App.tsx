@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ScrollTop from './components/scrollTop';
 import './App.css';
 
 import logo from './logo.svg';
@@ -14,6 +15,8 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+
+        <ScrollTop />
       </div>
     );
   }
