@@ -8,7 +8,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <Router>
+          <Route path="/" exact component={Nav} />
           <Route path="/scroll-top" component={DemoScrollTop} />
         </Router>
       </div>
@@ -17,3 +19,9 @@ class App extends React.Component {
 }
 
 export default App;
+
+const Nav = () => {
+  return <div>
+    <Link to="/scroll-top">回到顶部组件</Link>
+  </div>
+}
