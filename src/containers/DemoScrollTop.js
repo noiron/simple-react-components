@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import ScrollTop from '../components/scrollTop';
+import ScrollTop from '../components/ScrollTop';
 
 const DemoBox = styled.div`
   height: 4000px;
