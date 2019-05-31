@@ -3,8 +3,19 @@
  */
 import React from 'react';
 import Toast from 'light-toast';
+import styled from 'styled-components';
 
 const image_icon = require('../../assets/images/add-img.png');
+
+const UploaderBox = styled.div`
+  img.upload-icon {
+    width: 20px;
+    height: 20px;
+  }
+  input {
+    display: none;
+  }
+`;
 
 class ImageUploader extends React.PureComponent {
 
@@ -41,14 +52,23 @@ class ImageUploader extends React.PureComponent {
   }
 
   handleInputChange = async () => {
-    // TODO: 插入图片的操作
+    const files = this.input.files || [];
 
+    if (files.length > 0) {
+      const file = files[0];  
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const src = e.target.result;
+        this.props.insertImage(src);
+      }
+      reader.readAsDataURL(file);
+    }
   }
 
 
   render() {
     return (
-      <div className="image-uploader">
+      <UploaderBox className="image-uploader">
         <img src={image_icon} onClick={this.handleIconClick} className="upload-icon" alt="上传图片" />
         <input
           ref={e => this.input = e}
@@ -58,11 +78,13 @@ class ImageUploader extends React.PureComponent {
           onChange={this.handleInputChange}
           multiple={false}
         />
-      </div>
+      </UploaderBox>
     )
   }
 }
 
 
 export default ImageUploader;
+
+
 
