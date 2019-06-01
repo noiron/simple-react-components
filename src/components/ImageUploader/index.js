@@ -11,6 +11,7 @@ const UploaderBox = styled.div`
   img.upload-icon {
     width: 20px;
     height: 20px;
+    margin-right: 10px;
   }
   input {
     display: none;
@@ -70,6 +71,7 @@ class ImageUploader extends React.PureComponent {
     return (
       <UploaderBox className="image-uploader">
         <img src={image_icon} onClick={this.handleIconClick} className="upload-icon" alt="上传图片" />
+        点击上传图片
         <input
           ref={e => this.input = e}
           type="file"

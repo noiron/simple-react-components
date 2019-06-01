@@ -4,7 +4,7 @@ import ImageUploader from '../../components/ImageUploader';
 import ImagePreview from './ImagePreview';
 
 const DemoBox = styled.div`
-  font-size: 22px;
+  font-size: 16px;
   margin: 20px;
 `;
 

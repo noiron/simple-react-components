@@ -20,3 +20,4 @@
 ## 组件实现说明
 
 - [声音播放组件](https://github.com/noiron/simple-react-components/blob/master/src/components/SoundBar/README.md)
+- [图片上传组件](./src/components/ImageUploader/README.md)
