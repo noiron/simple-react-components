@@ -4,7 +4,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styled from 'styled-components';
-import withScroll from '../../../src/hocs/withScroll';
+import withScroll from '../../hocs/withScroll';
 
 const ic_scroll_top = require('../../assets/images/scroll-top.png');
 
