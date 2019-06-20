@@ -1,9 +1,12 @@
 import React from 'react';
+import WeekTitle from './WeekTitle';
 
 
 const Calendar = (props) => {
 
-  return <div>这里是日历组件</div>
+  return <div>
+    <WeekTitle />  
+  </div>
 }
 
 
