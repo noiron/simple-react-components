@@ -5,13 +5,36 @@ import styled from 'styled-components';
 const DayBox = styled.div`
   width: 30px;
   height: 30px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  span {
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #FFF4F2;
+    text-align: center;
+  }
+
+  span.on-focus {
+    background-color: #FFF4F2;
+  }
 `;
 
 const Day = props => {
-  const dateStr = props.date ? props.date.getDate() : '';
+  const { date, onFocus } = props;
+  const dateStr = date ? date.getDate() : '';
 
-  return <DayBox>{dateStr}</DayBox>
+  return (
+    <DayBox>
+      <span className={onFocus ? "on-focus" : ''}>
+        {dateStr}
+      </span>
+    </DayBox>
+  )
 }
 
 
