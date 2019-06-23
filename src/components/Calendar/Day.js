@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -25,15 +25,11 @@ const DayBox = styled.div`
 `;
 
 const Day = props => {
-  const { date } = props;
+  const { date, selectADay, focus } = props;
   const dateStr = date ? date.getDate() : '';
-  const [ focus, setFocus ] = useState(false);
 
   return (
-    <DayBox tabIndex="0" 
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
-    >
+    <DayBox onClick={() => selectADay(date)}>
       <span className={focus ? "on-focus" : ''}>
         {dateStr}
       </span>

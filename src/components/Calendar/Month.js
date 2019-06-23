@@ -46,14 +46,14 @@ const getWeekDays = (year, month) => {
 
 const Month = props => {
 
-  const { year, month } = props;
+  const { year, month, ...rest } = props;
   const weeks = getWeekDays(year, month);
 
   return (
     <div>
       {
         weeks.map(week => {
-          return <Week days={week} />
+          return <Week days={week} {...rest} />
         })
       }
     </div>

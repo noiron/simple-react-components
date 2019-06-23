@@ -11,6 +11,7 @@ const Calendar = (props) => {
   const initMonth = today.getMonth();
   const [year, setYear] = useState(initYear);
   const [month, setMonth] = useState(initMonth);
+  const [selectedDate, setSelectedDate] = useState(today);
 
   function gotoNextMonth() {
     const date = new Date(year, month + 1);
@@ -24,6 +25,9 @@ const Calendar = (props) => {
     setMonth(date.getMonth());
   }
 
+  function selectADay(date) {
+    setSelectedDate(date);
+  }
 
   return <div>
     <CalendarHeader 
@@ -33,10 +37,25 @@ const Calendar = (props) => {
       gotoPrevMonth={gotoPrevMonth}
     />
     <WeekTitle  />  
-    <Month year={year} month={month} />
+    <Month
+      year={year}
+      month={month}
+      selectedDate={selectedDate} 
+      selectADay={selectADay}
+    />
   </div>
 }
 
 
 export default Calendar;
+
+
+
+export function isSameDay(d1, d2) {
+  if (!d1 || !d2) return;
+
+  return d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate();
+}
 
