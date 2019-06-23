@@ -11,18 +11,18 @@ const WeekBox = styled.div`
 
 const Week = (props) => {
 
-    const { days } = props;
+  const { days } = props;
 
-    return (
-      <WeekBox>
-        {
-          days.map((item, index) => {
-            console.log(item);
-            return <Day date={item} />
-          })
-        }
-      </WeekBox>
-    )
-  }
+  return (
+    <WeekBox>
+      {
+        days.map((item, index) => {
+          console.log(item);
+          return <Day date={item} />
+        })
+      }
+    </WeekBox>
+  )
+}
 
 export default Week;
