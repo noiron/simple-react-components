@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import WeekTitle from './WeekTitle';
 import Month from './Month';
 import CalendarHeader from './Header';
 
+const Box = styled.div`
+  padding: 0 20px;
+`;
 
 const Calendar = (props) => {
 
@@ -29,7 +33,7 @@ const Calendar = (props) => {
     setSelectedDate(date);
   }
 
-  return <div>
+  return <Box>
     <CalendarHeader 
       year={year}
       month={month}
@@ -43,7 +47,7 @@ const Calendar = (props) => {
       selectedDate={selectedDate} 
       selectADay={selectADay}
     />
-  </div>
+  </Box>
 }
 
 

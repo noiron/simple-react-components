@@ -52,8 +52,8 @@ const Month = props => {
   return (
     <div>
       {
-        weeks.map(week => {
-          return <Week days={week} {...rest} />
+        weeks.map((week, index) => {
+          return <Week days={week} {...rest} key={index} />
         })
       }
     </div>

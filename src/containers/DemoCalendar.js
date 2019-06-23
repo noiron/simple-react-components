@@ -16,6 +16,11 @@ const Caption = styled.div`
 
 
 class DemoCalendar extends React.Component {
+
+  componentDidMount() {
+    document.title = '日历组件';
+  }
+
   render() {
     return (
       <DemoBox>

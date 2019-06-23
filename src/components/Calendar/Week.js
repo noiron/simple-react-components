@@ -23,6 +23,7 @@ const Week = (props) => {
               date={item}
               focus={item && isSameDay(item, selectedDate)}
               selectADay={selectADay}  
+              key={index}
             />
           )
         })
