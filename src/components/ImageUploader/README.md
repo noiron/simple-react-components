@@ -39,4 +39,5 @@ reader.readAsDataURL(file);
 
 
 > [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file) 
+> 
 > [FileReader.readAsDataURL() - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL)
