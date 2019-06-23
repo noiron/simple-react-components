@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Day from "./Day";
 import styled from 'styled-components';
 import { isSameDay } from '.';
@@ -21,7 +22,7 @@ const Week = (props) => {
           return (
             <Day 
               date={item}
-              focus={item && isSameDay(item, selectedDate)}
+              focus={!!(item && isSameDay(item, selectedDate))}
               selectADay={selectADay}  
               key={index}
             />
@@ -30,6 +31,13 @@ const Week = (props) => {
       }
     </WeekBox>
   )
+}
+
+
+Week.propTypes = {
+  days: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+  selectedDate: PropTypes.instanceOf(Date),
+  selectADay: PropTypes.func.isRequired,
 }
 
 export default Week;

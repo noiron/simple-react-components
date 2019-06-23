@@ -40,6 +40,8 @@ const Day = props => {
 
 Day.propTypes = {
   date: PropTypes.instanceOf(Date),
+  focus: PropTypes.bool.isRequired,
+  selectADay: PropTypes.func.isRequired,
 }
 
 export default Day;

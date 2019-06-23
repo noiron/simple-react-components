@@ -64,6 +64,8 @@ const Month = props => {
 Month.propTypes = {
   year: PropTypes.number.isRequired,
   month: PropTypes.number.isRequired,
+  selectedDate: PropTypes.instanceOf(Date),
+  selectADay: PropTypes.func.isRequired,
 }
 
 export default Month;

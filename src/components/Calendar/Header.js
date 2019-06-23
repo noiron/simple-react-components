@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const prev_icon = require('./images/prev.png');
@@ -47,7 +48,11 @@ const CalendarHeader = props => {
 }
 
 
-
-
+CalendarHeader.propTypes = {
+  year: PropTypes.number.isRequired,
+  month: PropTypes.number.isRequired,
+  gotoPrevMonth: PropTypes.func.isRequired,
+  gotoNextMonth: PropTypes.func.isRequired,
+}
 
 export default CalendarHeader;
