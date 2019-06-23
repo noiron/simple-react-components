@@ -17,7 +17,6 @@ const Week = (props) => {
     <WeekBox>
       {
         days.map((item, index) => {
-          console.log(item);
           return <Day date={item} />
         })
       }

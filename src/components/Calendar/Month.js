@@ -1,5 +1,6 @@
 import React from 'react';
 import Week from './Week';
+import PropTypes from 'prop-types';
 
 
 /**
@@ -45,12 +46,8 @@ const getWeekDays = (year, month) => {
 
 const Month = props => {
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
-
+  const { year, month } = props;
   const weeks = getWeekDays(year, month);
-
 
   return (
     <div>
@@ -63,5 +60,10 @@ const Month = props => {
   )
 }
 
+
+Month.propTypes = {
+  year: PropTypes.number.isRequired,
+  month: PropTypes.number.isRequired,
+}
 
 export default Month;
