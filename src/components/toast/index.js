@@ -1,15 +1,33 @@
-import React from 'react';
+import Notification from './notification';
 
+let notificationInstance;
 
-class Toast extends React.Component {
-
-
-  render() {
-
-    return (
-      <div>Toast组件</div>
-    )
-  }
+function getNotificationInstance() {
+  return notificationInstance || Notification.reWrite();
 }
 
-export default Toast;
+const notice = (type, content, duration, onClose, mask) => {
+
+  notificationInstance = getNotificationInstance();
+
+  notificationInstance.notice({
+    type,
+    content,
+    duration,
+    onClose,
+    mask,
+  });
+}
+
+export default {
+  show: (content, duration, onClose, mask) => notice(undefined, content, duration, onClose, mask),
+
+  success: (content, duration, onClose, mask) => notice('success', content, duration, onClose, mask),
+
+  hide: () => {
+    if (notificationInstance) {
+      notificationInstance.destroy();
+      notificationInstance = null;
+    }
+  }
+}
