@@ -1,4 +1,5 @@
 import Notification from './notification';
+import './index.css';
 
 let notificationInstance;
 

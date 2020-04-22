@@ -1,10 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import styled from 'styled-components';
-
-const Box = styled.div`
-  
-`;
 
 
 class Notice extends React.Component {

@@ -1,0 +1,58 @@
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.3;
+  background-color: #000;
+}
+
+.notification-box {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  width: 40%;
+  height: 300px;
+  z-index: 100;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.notice {
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  top: 30%;
+  margin: 0;
+  padding: 20px 30px;
+  width: 100%;
+  background: rgba(0, 0, 0, .7);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 42px;
+  color: #fff;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 101;
+  transition: all .3s;
+}
+
+.notice.success {
+  animation: BombIn .6s;
+}
+
+
+@keyframes BombIn {
+  0% {
+    -webkit-transform: translate(-50%, -50%, 0) scale(0, 0);
+    transform: translate(-50%, -50%, 0) scale(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2, 1.2);
+    transform: translate(-50%, -50%, 0) scale(1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+}
