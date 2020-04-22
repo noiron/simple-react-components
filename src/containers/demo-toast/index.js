@@ -2,7 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Toast from '../../components/toast';
 
-const DemoBox = styled.div``;
+const DemoBox = styled.div`
+  text-align: center;
+
+  .button {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100px;
+    margin: 10px auto;
+    border-radius: 4px;
+  }
+`;
 
 class DemoToast extends React.Component {
   componentDidMount() {
@@ -12,13 +22,33 @@ class DemoToast extends React.Component {
   render() {
     return (
       <DemoBox>
-        <div onClick={() => Toast.success('成功啦', 3000, null, true)}>
-          测试成功函数
+        <div
+          className="button"
+          onClick={() => Toast.success('Success', 3000, null, true)}
+        >
+          成功，有遮罩
         </div>
-        <div onClick={() => Toast.show('测试SHOW', 30000, null, true)}>
-          测试SHOW
+        <div
+          className="button"
+          onClick={() => Toast.success('Success', 3000, null, false)}
+        >
+          成功，无遮罩
         </div>
-        <div onClick={() => Toast.hide()}>隐藏Toast</div>
+        <div
+          className="button"
+          onClick={() => Toast.show('Show', 3000, null, true)}
+        >
+          无动画，有遮罩
+        </div>
+        <div
+          className="button"
+          onClick={() => Toast.show('Show', 3000, null, false)}
+        >
+          无动画，无遮罩
+        </div>
+        <div className="button" onClick={() => Toast.hide()}>
+          隐藏
+        </div>
       </DemoBox>
     );
   }
