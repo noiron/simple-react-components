@@ -3,6 +3,12 @@
 
 一些常用的 react 组件的简单实现。
 
+## 创建一个新的组件
+
+```
+node src/scripts/new-component.js awesome-component
+```
+
 ## 已实现的组件
 
 - [x] 回到顶部按钮
